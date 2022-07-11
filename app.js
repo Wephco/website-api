@@ -13,6 +13,7 @@ const port = process.env.PORT || 3550
 // routes
 const userRoutes = require('./routes/users')
 const requestRoutes = require('./routes/requests')
+const realEstateRoutes = require('./routes/realEstate')
 
 // allow all config for cors
 app.use(cors())
@@ -28,12 +29,11 @@ app.use(authJwt)
 // route middleware
 app.use('/api/users', userRoutes)
 app.use('/api/requests', requestRoutes)
+app.use('/api/real-estate', realEstateRoutes)
 
 // connect to database
 mongoose
-    .connect(
-        'mongodb://wephco-core:TFe808w1zPX4eIjjcHF9WKJyM7mXD2qADV5JDQhI07eBVEiLiZVEg7FVYwe0vmBfGVm0kosg0haDiGCMEQ2lww==@wephco-core.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@wephco-core@'
-    )
+    .connect(process.env.CONNECTION_STRING)
     .then(() => {
         console.log('Database connection is ready')
     })
