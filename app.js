@@ -23,7 +23,7 @@ app.use(bodyParser.json())
 app.use(morgan('tiny'))
 
 // authentication middleware to check token exists in API call
-app.use(authJwt())
+app.use(authJwt)
 
 // route middleware
 app.use('/api/users', userRoutes)
@@ -31,7 +31,9 @@ app.use('/api/requests', requestRoutes)
 
 // connect to database
 mongoose
-    .connect(process.env.CONNECTION_STRING)
+    .connect(
+        'mongodb://wephco-core:TFe808w1zPX4eIjjcHF9WKJyM7mXD2qADV5JDQhI07eBVEiLiZVEg7FVYwe0vmBfGVm0kosg0haDiGCMEQ2lww==@wephco-core.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@wephco-core@'
+    )
     .then(() => {
         console.log('Database connection is ready')
     })
