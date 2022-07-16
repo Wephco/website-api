@@ -3,7 +3,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const authJwt = require('./utils/jwt')
+// const authJwt = require('./utils/jwt')
 require('dotenv/config')
 
 const app = express()
@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 app.use(morgan('tiny'))
 
 // authentication middleware to check token exists in API call
-app.use(authJwt)
+// app.use(authJwt)
 
 // route middleware
 app.use('/api/users', userRoutes)
