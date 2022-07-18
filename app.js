@@ -14,6 +14,7 @@ const port = process.env.PORT || 3550
 const userRoutes = require('./routes/users')
 const requestRoutes = require('./routes/requests')
 const realEstateRoutes = require('./routes/realEstate')
+const referenceRoutes = require('./routes/references')
 
 // allow all config for cors
 app.use(cors())
@@ -30,6 +31,7 @@ app.use(morgan('tiny'))
 app.use('/api/users', userRoutes)
 app.use('/api/requests', requestRoutes)
 app.use('/api/real-estate', realEstateRoutes)
+app.use('/api/reference', referenceRoutes)
 
 // connect to database
 mongoose
