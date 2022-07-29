@@ -29,6 +29,7 @@ router.post('/register', async (req, res) => {
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
+        paymentPlan: req.body.paymentPlan,
         passwordHash: bcrypt.hashSync(req.body.phone, 12),
     })
     newUser = await newUser.save()

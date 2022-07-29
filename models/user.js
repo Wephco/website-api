@@ -13,6 +13,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    paymentPlan: {
+        type: String,
+        required: true,
+    },
     passwordHash: {
         type: String,
         required: true,
