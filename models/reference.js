@@ -5,6 +5,10 @@ const referenceSchema = mongoose.Schema({
         type: mongoose.Schema.Types.Mixed,
         required: true,
     },
+    notes: {
+        type: String,
+        required: true,
+    },
 })
 
 referenceSchema.virtual('id').get(() => {

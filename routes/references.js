@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     let newReference = Reference({
-        reference: req.body,
+        reference: req.body.reference ? req.body.reference : new Date.now(),
+        notes: req.body.notes ? req.body.notes : '',
     })
 
     newReference = newReference.save()
