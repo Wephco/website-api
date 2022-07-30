@@ -15,6 +15,7 @@ const userRoutes = require('./routes/users')
 const requestRoutes = require('./routes/requests')
 const realEstateRoutes = require('./routes/realEstate')
 const referenceRoutes = require('./routes/references')
+const contactRoutes = require('./routes/contacts')
 
 // allow all config for cors
 app.use(cors())
@@ -32,6 +33,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/requests', requestRoutes)
 app.use('/api/real-estate', realEstateRoutes)
 app.use('/api/reference', referenceRoutes)
+app.use('/api/contact', contactRoutes)
 
 // connect to database
 mongoose
