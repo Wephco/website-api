@@ -21,6 +21,10 @@ const contactSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    contactMethod: {
+        type: String,
+        required: true,
+    },
 })
 
 contactSchema.virtual('id').get(function () {

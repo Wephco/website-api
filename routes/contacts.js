@@ -22,6 +22,7 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         location: req.body.location,
         message: req.body.message,
+        contactMethod: req.body.contactMethod,
     })
     newContact = await newContact.save()
 
