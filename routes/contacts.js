@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
     let newContact = Contact({
         name: req.body.name,
         phone: req.body.phone,
+        subject: req.body.subject,
         email: req.body.email,
         location: req.body.location,
         message: req.body.message,
