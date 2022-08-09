@@ -20,23 +20,23 @@ const contactRoutes = require('./routes/contacts')
 // allow all config for cors
 app.use(cors())
 app.options('*', cors())
-app.use(
-    cors({
-        origin: ' https://wephco-staging-api.herokuapp.com',
-        credentials: true,
-    })
-)
+// app.use(
+//     cors({
+//         origin: ' https://wephco-staging-api.herokuapp.com',
+//         credentials: true,
+//     })
+// )
 
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Credentials', true)
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-    res.header(
-        'Access-Control-Allow-Headers',
-        'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
-    )
-    next()
-})
+// app.use(function (req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*')
+//     res.header('Access-Control-Allow-Credentials', true)
+//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+//     res.header(
+//         'Access-Control-Allow-Headers',
+//         'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+//     )
+//     next()
+// })
 
 // middleware
 app.use(bodyParser.json())
