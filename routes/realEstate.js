@@ -1,5 +1,6 @@
 const express = require('express')
 const { RealEstateRequest } = require('../models/realEstateRequest')
+// const cors = require('cors')
 // const { Request } = require('../models/request')
 // const bcrypt = require('bcryptjs')
 // const jwt = require('jsonwebtoken')

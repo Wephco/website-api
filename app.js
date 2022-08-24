@@ -18,25 +18,14 @@ const referenceRoutes = require('./routes/references')
 const contactRoutes = require('./routes/contacts')
 
 // allow all config for cors
+// var corsOptions = {
+//     origin: '*',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204,
+// }
 app.use(cors())
-app.options('*', cors())
-// app.use(
-//     cors({
-//         origin: ' https://wephco-staging-api.herokuapp.com',
-//         credentials: true,
-//     })
-// )
-
-// app.use(function (req, res, next) {
-//     res.header('Access-Control-Allow-Origin', '*')
-//     res.header('Access-Control-Allow-Credentials', true)
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-//     res.header(
-//         'Access-Control-Allow-Headers',
-//         'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
-//     )
-//     next()
-// })
+// app.options('*', cors())
 
 // middleware
 app.use(bodyParser.json())
@@ -51,6 +40,9 @@ app.use('/api/requests', requestRoutes)
 app.use('/api/real-estate', realEstateRoutes)
 app.use('/api/reference', referenceRoutes)
 app.use('/api/contact', contactRoutes)
+
+// proxy setup
+app.set('trust proxy', 1)
 
 // connect to database
 mongoose
