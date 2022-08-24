@@ -2,7 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const cors = require('cors')
+// const cors = require('cors')
 // const authJwt = require('./utils/jwt')
 require('dotenv/config')
 
@@ -18,13 +18,13 @@ const referenceRoutes = require('./routes/references')
 const contactRoutes = require('./routes/contacts')
 
 // allow all config for cors
-var corsOptions = {
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-}
-app.use(cors(corsOptions))
+// var corsOptions = {
+//     origin: '*',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204,
+// }
+// app.use(cors(corsOptions))
 // app.options('*', cors())
 
 // middleware
