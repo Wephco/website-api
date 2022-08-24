@@ -18,13 +18,13 @@ const referenceRoutes = require('./routes/references')
 const contactRoutes = require('./routes/contacts')
 
 // allow all config for cors
-// var corsOptions = {
-//     origin: '*',
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     preflightContinue: false,
-//     optionsSuccessStatus: 204,
-// }
-app.use(cors())
+var corsOptions = {
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+}
+app.use(cors(corsOptions))
 // app.options('*', cors())
 
 // middleware
